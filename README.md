@@ -4,14 +4,14 @@ Portfolio project to demonstrate a single page application featuring a neighborh
 
 The application is written using the [knockout](http://knockoutjs.com/) library to easily associate  HTML DOM elements with the model data in the javascript functions and to automatically update the UI when the model data changes.
 
-The application demonstrates integration of 3rd party APIs:
+The application demonstrates the integration of 3rd party APIs:
 
 - [Google Maps](https://cloud.google.com/maps-platform/), to visualize a neighborhood and it's places
 - [Foursquare](https://developer.foursquare.com/docs/api/venues/explore), to show an interesting venue when a location is clicked.
 
 
 
-Attractive styling and intuitive responsive behavior on all devices is implemented with [bootstrap 4](https://getbootstrap.com/) .
+Attractive styling and intuitive responsive behavior on all devices are implemented with [bootstrap 4](https://getbootstrap.com/).
 
 
 
