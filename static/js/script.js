@@ -243,12 +243,7 @@ var ViewModel = function() {
         }
 
         // Turn marker on or off
-        if (showLocation){
-            x.marker.setMap(map);
-        }
-        else {
-            x.marker.setMap(null);
-        }
+        x.marker.setVisible(showLocation);
 
         return showLocation;
     });
