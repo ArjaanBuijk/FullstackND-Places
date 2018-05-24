@@ -12,3 +12,8 @@ function initMap() {
     viewModel.initMarkers();
 
 }
+
+function mapError() {
+    /* Called if loading of google maps script fails */
+    alert("Google map failed to load.");
+}

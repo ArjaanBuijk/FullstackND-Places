@@ -69,13 +69,13 @@
         <script src="assets/js/knockout-3.2.0.js"></script>
         <script src="assets/js/knockout-projections.js"></script>
 
-        <!-- Load the map -->
-        <script src="js/map.js"></script>
-        <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5_zSpcee4UXUWpsZB-50Z4Mu-rKmqP-U&v=3&callback=initMap">
-        </script>
-
         <!-- Run the application -->
         <script src="js/script.js"></script>
+
+        <!-- Load the map, note that marker generation starts from initMap() in map.js -->
+        <script src="js/map.js"></script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5_zSpcee4UXUWpsZB-50Z4Mu-rKmqP-U&v=3&callback=initMap"
+                onerror="mapError()"></script>
     </body>
 </html>
