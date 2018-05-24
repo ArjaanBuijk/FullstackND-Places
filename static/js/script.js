@@ -19,7 +19,7 @@ let Venue = function(venueName, venueUrl) {
     let self = this;
 
     self.venueName = venueName;
-    self.venueUrl = venueUrl
+    self.venueUrl = venueUrl;
 };
 
 
