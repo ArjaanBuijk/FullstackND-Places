@@ -9,8 +9,8 @@ let initialLocations = [
 let Location = function(locationName, locationPosition, locationMarker, locationVenue) {
     let self = this;
 
-    self.title = ko.observable(locationName);
-    self.position = ko.observable(locationPosition);
+    self.title = locationName;
+    self.position = locationPosition;
     self.marker = locationMarker;
     self.venue = locationVenue;
 };
@@ -102,7 +102,7 @@ var ViewModel = function() {
         let foursquareUrlBase = 'https://api.foursquare.com/v2/venues/explore?v=20180501&radius=2000&client_id=VV2G3W3ALC4LYDEB0JDC2KJSKLXD2GPU5ZJM4V55OSMV50AE&client_secret=R55AX1RKXWEBXMIG43YI2343C3ZR2BCQSTITGWHZDJJV00EB&limit=1';
 
         self.locations().forEach(function(locationItem) {
-            let foursquareUrl = foursquareUrlBase + '&ll=' + locationItem.position().lat + ',' + locationItem.position().lng;
+            let foursquareUrl = foursquareUrlBase + '&ll=' + locationItem.position.lat + ',' + locationItem.position.lng;
 
             // NOTE: .getJSON method is an abstraction of the .ajax method
             $.getJSON(foursquareUrl, function(data){
@@ -239,7 +239,7 @@ var ViewModel = function() {
 
         // Check if filter string is included in title of location, via regexp test
         if (self.filterInput() !== "") {
-            showLocation = self.filterPattern().test(x.title());
+            showLocation = self.filterPattern().test(x.title);
         }
 
         // Turn marker on or off
