@@ -119,7 +119,7 @@ var ViewModel = function() {
                 }
 
             }).fail( function(e) {
-                alert('Error retrieving foursquare result for ' + locationItem.title);
+                alert('Error retrieving foursquare results');
                 locationItem.venue = '**NONE**';
             });
         });
