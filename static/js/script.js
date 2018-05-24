@@ -188,25 +188,8 @@ var ViewModel = function() {
 
     /* Callback function when a location is selected in the list */
     self.clickedListLocation = function(clickedLocation) {
-
-        // Close the InfoWindow if it was open
-        //self.closeInfoWindow(self.largeInfowindow);
-
-        // Reset the icon of associated marker of current selection
-        self.currentLocation().marker.setIcon(self.defaultIcon);
-
-        // Set currentLocation based on clicked item in the list
-        self.currentLocation(clickedLocation);
-
-        // Bounce the associated marker a couple of times
-        clickedLocation.marker.setAnimation(google.maps.Animation.BOUNCE);
-        clickedLocation.marker.setAnimation(4);
-
-        // Highlight the associated marker of new selection
-        clickedLocation.marker.setIcon(self.highlightedIcon);
-
-        // open the InfoWindow
-        self.populateInfoWindow(clickedLocation.marker, self.largeInfowindow);
+        // Trigger a click event on the associated marker
+        new google.maps.event.trigger( clickedLocation.marker, 'click' );
     };
 
 
@@ -214,6 +197,10 @@ var ViewModel = function() {
     self.clickedMarker = function(marker) {
         // Reset the icon of associated marker of current selection
         self.currentLocation().marker.setIcon(self.defaultIcon);
+
+        // Bounce the marker a couple of times
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+        marker.setAnimation(4);
 
         // make this location the current location, so list will update itself
         self.setCurrentLocationFromMarker(marker);
