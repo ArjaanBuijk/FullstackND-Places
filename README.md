@@ -25,5 +25,5 @@ Just open it up in your browser, and all should be self explanatory.
 
 # Deployed on Heroku
 
-The application is also deployed on https://flask-catalog.herokuapp.com.
+The application is also deployed on  [https://knockout-neighborhood.herokuapp.com](https://knockout-neighborhood.herokuapp.com)
 

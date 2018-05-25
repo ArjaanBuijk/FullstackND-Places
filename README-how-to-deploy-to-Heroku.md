@@ -2,12 +2,24 @@
 
 Heroku is an environment to deploy dynamic apps, so in order to be able to deploy the static application, I wrapped it in a basic Flask application, as follows:
 
+
+
+**Step 0. Working in a separate branch, called "heroku"**
+
+```bash
+$ git checkout -b heroku
+```
+
+
+
 **Step 1. Make sure python3-pip and python3-env are installed**
 
 ```bash
 $ sudo apt install python3-pip
 $ sudo apt-get install python3-venv
 ```
+
+
 
 **Step 2. Prepare a python3 virtual environment with Flask & gunicorn** 
 
@@ -22,6 +34,8 @@ $ source venv/bin/activate
 (venv) $ pip freeze > requirements.txt
 
 ```
+
+
 
 **Step 3. Write a python file that serves the application** 
 
@@ -42,6 +56,8 @@ app = Flask(__name__)
 def root():
     return render_template('index.html')
 ```
+
+
 
 **Step 4. create templates/index.html** 
 
@@ -69,7 +85,7 @@ File: FullstackND-Places/templates/index.html
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 ```
 
-NOTE: It is not ideal that I had to copy the index.html, so now I have two copies to maintain. This is not really needed, as explained below.
+NOTE: It is not ideal that I had to copy the index.html, so now I have two copies to maintain....
 
 
 
@@ -87,7 +103,7 @@ web: gunicorn places:app
 
 **Step 6. Deploy**
 
-This is all that is needed, to deploy it to Heroku, as a python app:
+This is all that is needed, to deploy it to Heroku:
 
 - In the Heroku website, define a new app. I called it **knockout-neighborhood**
 
@@ -105,4 +121,13 @@ This is all that is needed, to deploy it to Heroku, as a python app:
   
   ```
 
-- When something goes wrong, the server logs can be viewed [here](https://dashboard.heroku.com/apps/knockout-neighborhood/logs)
+
+
+**Step 7. Access the application via the browser**
+
+The application is now accessible at: [https://knockout-neighborhood.herokuapp.com](https://knockout-neighborhood.herokuapp.com)
+
+You can view the log files at: [https://dashboard.heroku.com/apps/knockout-neighborhood/logs](https://dashboard.heroku.com/apps/knockout-neighborhood/logs)
+
+
+
