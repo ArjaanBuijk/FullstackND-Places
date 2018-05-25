@@ -1,3 +1,6 @@
+// Enforce strict JavaScript mode
+'use strict';
+
 var map;
 function initMap() {
     /* Callback by Google Map API, once loaded */

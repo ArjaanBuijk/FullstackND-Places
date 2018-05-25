@@ -1,3 +1,6 @@
+// Enforce strict JavaScript mode
+'use strict';
+
 let initialLocations = [
     {title: 'Park Ave Penthouse', position: {lat: 40.7713024, lng: -73.9632393}},
     {title: 'Chelsea Loft', position: {lat: 40.7444883, lng: -73.9949465}},

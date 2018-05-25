@@ -6,14 +6,9 @@ body {
     padding: 0;
 }
 
-#map {
+.map-canvas {
     height: 100%;
 }
 
-
-.filter-icon:after{
-    /* See: https://emojipedia.org/emoji-1.0/ */
-    content: '🔍';
-}
 
 
