@@ -2,9 +2,7 @@
 
 Heroku is an environment to deploy dynamic apps, so in order to be able to deploy the static application, I wrapped it in a basic Flask application, as follows:
 
-
-
-**Step 0. Working in a separate branch, called "heroku"**
+**Step 0. When working in a separate branch, called "heroku"**
 
 ```bash
 $ git checkout -b heroku
@@ -114,10 +112,13 @@ This is all that is needed, to deploy it to Heroku:
   
   $ heroku git:remote -a knockout-neighborhood
   
-  # I am working locally in branch: heroku
+  # When working locally in branch: heroku
   # Need to push into master of remote, else it will not be deployed.
   # This commands pushes from local heroku branch into master branch of remote repository at heroku
   $ git push heroku heroku:master
+  
+  # When working locally in master branch
+  $ git push heroku master
   
   ```
 
