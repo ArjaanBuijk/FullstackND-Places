@@ -15,8 +15,15 @@ Attractive styling and intuitive responsive behavior on all devices is implement
 
 
 
-## Usage
+# Usage
 
-The neighborhood page can be found in: **static/index.html**
+The neighborhood page can be found in: static/index.html
 
-Just open it up, and all should be self explanatory.
+Just open it up in your browser, and all should be self explanatory.
+
+
+
+# Deployed on Heroku
+
+The application is also deployed on https://flask-catalog.herokuapp.com.
+

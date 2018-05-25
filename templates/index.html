@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Portfolio project for Udacity FullStack nanodegree">
+        <meta name="author" content="Arjaan Buijk">
+        <title>Interesting Places</title>
+        <!-- Bootstrap core CSS -->
+        <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+        <!-- Custom styles for this HTML -->
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="container">
+            <!-- A row for the heading of the page -->
+            <section class="row">
+                <section class="col-md-12">
+                    <nav class="navbar navbar-light bg-light">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#list-column" aria-controls="list-column" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-text h2">
+                            <b>Places</b>
+                        </div>
+                    </nav>
+                </section>
+            </section>
+
+            <section class="row">
+                <section class="col-md-3">
+                    <aside id="list-column" >
+                        <div class="card">
+                            <div class="card-header">
+                                 <input class="form-control" placeholder="filter..." data-bind="value: filterInput" />
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group" data-bind="foreach: locationsFiltered">
+                                    <li class="list-group-item" data-bind="text: $data.title,
+                                                                           css:{'active': $data == $parent.currentLocation() },
+                                                                           click: $parent.clickedListLocation"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </aside>
+                </section>
+
+                <section class="col-md-9">
+                    <div class="embed-responsive embed-responsive-1by1 h-100">
+                        <div class="embed-responsive-item">
+                            <div id="map">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/js/assets/js/popper.js') }}"></script>
+        <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="{{ url_for('static', filename='assets/js/ie10-viewport-bug-workaround.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/js/knockout-3.2.0.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/js/knockout-projections.js') }}"></script>
+
+        <!-- Run the application -->
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+        <!-- Load the map, note that marker generation starts from initMap() in map.js -->
+        <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5_zSpcee4UXUWpsZB-50Z4Mu-rKmqP-U&v=3&callback=initMap"
+                onerror="mapError()"></script>
+    </body>
+</html>
