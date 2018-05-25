@@ -9,7 +9,7 @@ $ sudo apt install python3-pip
 $ sudo apt-get install python3-venv
 ```
 
-**Step 2. Prepare a python3 virtual environment with Flask** 
+**Step 2. Prepare a python3 virtual environment with Flask & gunicorn** 
 
 ```bash
 $ cd FullstackND-Places
@@ -18,7 +18,9 @@ $ source venv/bin/activate
 (venv)
 (venv) $ pip install --upgrade pip
 (venv) $ pip install flask
+(venv) $ pip install gunicorn
 (venv) $ pip freeze > requirements.txt
+
 ```
 
 **Step 3. Write a python file that serves the application** 
@@ -89,11 +91,18 @@ This is all that is needed, to deploy it to Heroku, as a python app:
 
 - In the Heroku website, define a new app. I called it **knockout-neighborhood**
 
-- Then, follow the steps to deploy via Heroku Git CLI, as explained [here](https://dashboard.heroku.com/apps/knockout-neighborhood/deploy/heroku-git):
+- Then, follow the steps to deploy via Heroku Git CLI, as explained [here](https://devcenter.heroku.com/articles/git):
 
   ```bash
   $ heroku login
   
+  $ heroku git:remote -a knockout-neighborhood
+  
+  # I am working locally in branch: heroku
+  # Need to push into master of remote, else it will not be deployed.
+  # This commands pushes from local heroku branch into master branch of remote repository at heroku
+  $ git push heroku heroku:master
+  
   ```
 
-  
+- When something goes wrong, the server logs can be viewed [here](https://dashboard.heroku.com/apps/knockout-neighborhood/logs)
